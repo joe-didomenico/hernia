@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bilateral Hernia Recovery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="recovery-plan" id="recoveryPlan">
+
+  <!-- ANYTIME SECTION -->
+  <div class="time-block warning always-active">
+    <h2>⚠️ Anytime: Call Your Surgeon / Seek Care If</h2>
+    <div class="step">Fever &gt; 101°F (38.3°C)</div>
+    <div class="step">Increasing redness, warmth, or drainage</div>
+    <div class="step">Severe or worsening pain after day 5–7</div>
+    <div class="step">Inability to urinate</div>
+    <div class="step">Sudden large, painful swelling</div>
+  </div>
+
+  <!-- PROGRESS INDICATOR -->
+  <div class="progress-container">
+    <div class="progress-label">Recovery Progress</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-text" id="progressText"></div>
+  </div>
+
+  <!-- TIME SECTIONS -->
+<div class="time-block" data-start-hours="0" data-end-hours="48">
+  <span class="toggle">+</span>
+  <h2>First 24–48 Hours (Immediate Recovery)</h2>
+
+  <div class="content">
+
+    <div class="step"><strong>Goals:</strong> pain control, protect repair, avoid strain</div>
+
+    <div class="step"><strong>Activity</strong></div>
+    <div class="step">Rest, but don’t stay in bed all day</div>
+    <div class="step">Short walks every 1–2 hours while awake (prevents clots, helps bowel function)</div>
+
+    <div class="step"><strong>Pain control</strong></div>
+    <div class="step">Use prescribed medications as directed</div>
+    <div class="step">Alternate acetaminophen ± ibuprofen if allowed</div>
+    <div class="step">Avoid NSAIDs if your surgeon said not to</div>
+
+    <div class="step"><strong>Ice packs</strong></div>
+    <div class="step">15–20 minutes, 3–4× per day over the groin (wrap ice pack in cloth)</div>
+
+    <div class="step"><strong>Incision care</strong></div>
+    <div class="step">Keep incisions clean and dry</div>
+    <div class="step">Shower usually allowed after 24–48 hours (no soaking or baths)</div>
+
+    <div class="step"><strong>Diet</strong></div>
+    <div class="step">Light meals initially</div>
+    <div class="step">High-fiber foods and plenty of fluids</div>
+
+    <div class="step"><strong>Stool softener</strong></div>
+    <div class="step">Start immediately (very important — no straining)</div>
+
+  </div>
+</div>
+
+
+  <div class="time-block" data-start-hours="48" data-end-hours="168">
+    <span class="toggle">+</span>
+    <h2>Days 3–7 (Week 1)</h2>
+    <div class="content">
+      <div class="step">Increase walking gradually</div>
+      <div class="step">No lifting &gt; 10 lb</div>
+    </div>
+  </div>
+
+  <div class="time-block" data-start-hours="168" data-end-hours="672">
+    <span class="toggle">+</span>
+    <h2>Weeks 2–4</h2>
+    <div class="content">
+      <div class="step">Light household tasks only</div>
+      <div class="step">Avoid core strain</div>
+    </div>
+  </div>
+
+  <div class="time-block" data-start-hours="672" data-end-hours="1008">
+    <span class="toggle">+</span>
+    <h2>Weeks 4–6</h2>
+    <div class="content">
+      <div class="step">Gradual strengthening if cleared</div>
+    </div>
+  </div>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
