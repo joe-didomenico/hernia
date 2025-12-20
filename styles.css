@@ -116,3 +116,18 @@ body {
   margin-top: 4px;
   color: #444;
 }
+
+/* Appointment marker on progress bar */
+.progress-marker {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: #d93025; /* red marker */
+  left: 0;
+  pointer-events: auto;
+}
+
+.progress-bar {
+  position: relative; /* required for marker positioning */
+}
