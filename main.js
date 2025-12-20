@@ -1,20 +1,21 @@
+
 // =============================
-// CONFIG: SET SURGERY DATE HERE
+// CONFIG
 // =============================
 const surgeryDate = new Date("2025-12-12T13:00:00");
+const appointmentDate = new Date("2026-01-12T09:00:00"); // follow-up visit
 
 // =============================
 // TIME CALCULATIONS
 // =============================
 const now = new Date();
 const elapsedHours = (now - surgeryDate) / (1000 * 60 * 60);
+const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
 // =============================
 // POST-OP DAY BADGE
 // =============================
-const MS_PER_DAY = 1000 * 60 * 60 * 24;
 const postopDay = Math.floor((now - surgeryDate) / MS_PER_DAY) + 1;
-
 const badge = document.getElementById("postopBadge");
 if (badge) {
   badge.textContent = `Day ${postopDay} post-op`;
@@ -38,9 +39,24 @@ const progressText = document.getElementById("progressText");
 if (progressFill) {
   progressFill.style.width = pct + "%";
 }
-
 if (progressText) {
   progressText.textContent = `~${Math.floor(pct)}% complete`;
+}
+
+// =============================
+// APPOINTMENT MARKER
+// =============================
+const marker = document.getElementById("appointmentMarker");
+if (marker) {
+  const appointmentHours =
+    (appointmentDate - surgeryDate) / (1000 * 60 * 60);
+
+  const markerPct = Math.min(
+    Math.max((appointmentHours / maxEnd) * 100, 0),
+    100
+  );
+
+  marker.style.left = markerPct + "%";
 }
 
 // =============================
@@ -51,23 +67,17 @@ blocks.forEach(block => {
   const end = Number(block.dataset.endHours);
   const toggle = block.querySelector(".toggle");
 
-  // Completed sections
   if (elapsedHours >= end) {
     block.classList.add("completed", "collapsed");
     if (toggle) toggle.textContent = "+";
-  }
-  // Current section
-  else if (elapsedHours >= start && elapsedHours < end) {
+  } else if (elapsedHours >= start && elapsedHours < end) {
     block.classList.add("current");
     if (toggle) toggle.textContent = "–";
-  }
-  // Future sections
-  else {
+  } else {
     block.classList.add("collapsed");
     if (toggle) toggle.textContent = "+";
   }
 
-  // Expand / collapse toggle
   if (toggle) {
     toggle.addEventListener("click", () => {
       block.classList.toggle("collapsed");
